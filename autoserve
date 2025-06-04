@@ -20,7 +20,7 @@ print_help() {
 port=8000
 
 # Parse options
-while getopts "p:" opt; do
+while getopts "p:h" opt; do
 	case $opt in
 		p) port=$OPTARG
 			;;
