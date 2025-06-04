@@ -21,6 +21,8 @@ AutoServe is a simple Bash script to launch a local web server and share your cu
 - ✅ Compatible with any POSIX-compliant shell environment
 
 ## 🚀 Usage
-
 ```bash
 ./autoserve.sh [-p <port>] [--help]
+To run it as a command, i.e. without the "./", use:
+sudo mv sudo mv autoserve /usr/local/bin/
+
