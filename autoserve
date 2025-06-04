@@ -4,7 +4,7 @@
 echo "-------------------------------------------"
 echo "-               Autoserver                -"
 echo "-        Local Web Server Launcher        -"
-echo "-           Author: Ali M. Hamed          -"
+echo "-       Author: Ali Muhammad Hamed        -"
 echo "-------------------------------------------"
 
 print_help() {
