@@ -1,0 +1,60 @@
+#!/bin/bash
+# Autoserve - A simple local server launcher
+
+echo "-------------------------------------------"
+echo "-               Autoserver                -"
+echo "-        Local Web Server Launcher        -"
+echo "-           Author: Ali M. Hamed          -"
+echo "-------------------------------------------"
+
+print_help() {
+    echo "Usage: $0 [-p port] [-h]"
+    echo
+    echo "Options:"
+    echo "  -p <port>     Set the port number (default: 8000"
+    echo "  -h, --help    Show this help message"
+    exit 0
+}
+
+# Set defualt port
+port=8000
+
+# Parse options
+while getopts "p:" opt; do
+	case $opt in
+		p) port=$OPTARG
+			;;
+		h) print_help
+			;;
+		*) print_help
+			;;
+	esac
+done
+
+# Get current directory
+dir=$(pwd)
+
+# Get local IP address
+ip=$(hostname -I |awk '{print $1}')
+
+# Start server using python
+echo "Serving $dir at:"
+echo "http://$ip:$port"
+
+# Optional: print QR code if available
+if command -v qrencode &>/dev/null; then
+       echo
+       echo "Scan this QR code to open on your phone:"
+       echo
+       qrencode -t ANSIUTF8 "http://$ip:$port"
+       echo
+else
+       echo "(Install 'qrencode to generate a QR code.)"
+fi       
+
+# To quite
+echo "[Press CTRL+c to stop]"
+
+# Launch server
+python3 -m http.server "$port"
+

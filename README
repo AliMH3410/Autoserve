@@ -1,0 +1,26 @@
+# 🖥️ AutoServe
+
+AutoServe is a simple Bash script to launch a local web server and share your current directory over the network — complete with a QR code for easy mobile access.
+
+## 📦 Features
+
+- 🌐 Serves the current directory using Python’s `http.server` module
+- ⚙️  Customizable port with `-p` option
+- 📱 Shows a QR code to open on mobile devices
+- 🧠 Automatically detects your local IP address
+- 🆘 `--help` flag for usage info
+
+## 🔧 Dependencies
+- Python 3 (usually pre-installed on Debian and most Linux distros)
+
+- qrencode — for generating QR codes (optional but recommended)
+
+## 🧪 Compatibility
+- ✅ Works on Debian and Debian-based distros
+
+- ✅ Compatible with any POSIX-compliant shell environment
+
+## 🚀 Usage
+
+```bash
+./autoserve.sh [-p <port>] [--help]
